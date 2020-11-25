@@ -33,8 +33,6 @@ const GameScreen = (props) => {
   }, [currentGuess, userChoice, onGameOver]);
 
   const nextGuessHandler = (direction) => {
-    console.log('current guess', currentGuess);
-    console.log('user choice', props.userChoice);
     if (
       (direction === 'lower' && currentGuess < props.userChoice) ||
       (direction === 'greater' && currentGuess > props.userChoice)
@@ -69,7 +67,7 @@ const GameScreen = (props) => {
         <Button title="LOWER" onPress={nextGuessHandler.bind(this, 'lower')} />
         <Button
           title="GREATER"
-          onPress={nextGuessHandler.bind(this, 'lower')}
+          onPress={nextGuessHandler.bind(this, 'greater')}
         />
       </Card>
     </View>
